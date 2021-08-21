@@ -17,4 +17,15 @@ const alturaTrianguloIsoceles = (lado1, lado2, base) => {
     } else {
         return 'No es un triangulo isoceles'
     }
-}
+};
+///Menu Movil
+const menuMovil = document.querySelector('.menu_movil_contenedor');
+const btnMenuMovil = document.querySelector('.icono_menu_movil');
+const openMenuMovil = () => {
+    if (menuMovil.className == 'menu_movil_contenedor menu_movil_open') {
+        menuMovil.classList.remove('menu_movil_open')
+    } else {
+        menuMovil.classList.add('menu_movil_open')
+    }
+};
+btnMenuMovil.addEventListener('click', openMenuMovil)
