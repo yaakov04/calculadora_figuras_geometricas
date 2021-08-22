@@ -18,7 +18,7 @@
     <header>
         <div class="contenedor header">
             <h1>Calculadora de figuras geometricas</h1>
-            <button class="icono_menu_movil">
+            <button data-icono-menu="true" class="icono_menu_movil">
                 <i class="fas fa-bars"></i>
             </button>
 
@@ -28,55 +28,217 @@
     </header>
     <div class="menu_movil_contenedor">
         <nav class="menu_movil">
-            <a href="#">Cuadrado</a>
-            <a href="#">Triangulo</a>
-            <a href="#">Circulo</a>
+            <a data-accion="mostrar_ocultar" data-seccion="cuadrado" href="#">Cuadrado</a>
+            <a data-accion="mostrar_ocultar" data-seccion="triangulo" href="#">Triangulo</a>
+            <a data-accion="mostrar_ocultar" data-seccion="circulo" href="#">Circulo</a>
         </nav>
     </div>
     <main>
-        <section id="cuadrado">
-            <div class="display_contenedor contenedor">
-                <div class="display">
-                    <div class="figura">
-                        <span class="cuadradoLadoTop">L</span>
-                        <div class="cuadrado_contenedor">
-                            <span class="cuadradoLadoLeft">L</span>
-                            <div class="cuadrado mar_left_5"></div>
-                            <span class="cuadradoLadoRight mar_left_5">L</span>
+        <div>
+            <section id="cuadrado" class="mostrar">
+                <div class="display_contenedor contenedor">
+                    <div class="display">
+                        <div class="figura">
+                            <span class="cuadradoLadoTop">L</span>
+                            <div class="cuadrado_contenedor">
+                                <span class="cuadradoLadoLeft">L</span>
+                                <div class="cuadrado mar_left_5"></div>
+                                <span class="cuadradoLadoRight mar_left_5">L</span>
+                            </div>
+                            <span class="cuadradoLadoBottom">L</span>
                         </div>
-                        <span class="cuadradoLadoBottom">L</span>
+                        <div class="formulas_contenedor">
+                            <div class="formula">
+                                <span class="formulas_nombre">Perimetro:</span>
+                                <span class="formulas">L + L + L + L</span>
+                            </div>
+                            <div class="formula">
+                                <span class="formulas_nombre">Area:</span>
+                                <span class="formulas">L x L</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="formulas_contenedor">
-                        <div class="formula">
-                            <span class="formulas_nombre">Perimetro:</span>
-                            <span class="formulas">L + L + L + L</span>
-                        </div>
-                        <div class="formula">
-                            <span class="formulas_nombre">Area:</span>
-                            <span class="formulas">L x L</span>
-                        </div>
+                    <div class="contenedor_switch">
+                        <button id="switch_cuadrado" class="switch switch_perimetro">
+                            <span>Perimetro</span>
+                            <span>Area</span>
+                        </button>
                     </div>
+
+
                 </div>
 
-                <div class="switch"></div>
-            </div>
-            <span class="resultado">25.00</span>
-            <div class="formulario contenedor">
-                <form class="area_cuadrado" action="">
-                    <fieldset>
-                        <legend>Area del cuadrado</legend>
-                        <div class="input">
-                            <label for="areaLadoCuadrado">Lado</label>
-                            <input type="number" id="areaLadoCuadrado">
+                <div class="formulario_cuadrado formulario contenedor">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="area_cuadrado ocultar" action="">
+                        <fieldset>
+                            <legend>Area del cuadrado</legend>
+                            <div class="input">
+                                <label for="areaLadoCuadrado">Lado:</label>
+                                <input type="number" id="areaLadoCuadrado">
+                            </div>
+                        </fieldset>
+                        <button type="button" data-boton="calcular" data-tipo="area" data-figura="cuadrado" class="btn">Calcular</button>
+                    </form>
+
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="perimetro_cuadrado">
+                        <fieldset>
+                            <legend>Perimetro del cuadrado</legend>
+                            <div class="input">
+                                <label for="perimetroLadoCuadrado">Lado:</label>
+                                <input type="number" id="perimetroLadoCuadrado">
+                            </div>
+                        </fieldset>
+                        <button type="button" data-boton="calcular" data-tipo="perimetro" data-figura="cuadrado" class="btn">Calcular</button>
+                    </form>
+
+
+                </div>
+
+            </section>
+            <!--#cuadrado-->
+
+            <section id="triangulo">
+                <div class="display_contenedor contenedor">
+                    <div class="display">
+                        <div class="figura">
+                            <span class="cuadradoLadoTop">L</span>
+                            <div class="cuadrado_contenedor">
+                                <span class="cuadradoLadoLeft">L</span>
+                                <div class="cuadrado mar_left_5"></div>
+                                <span class="cuadradoLadoRight mar_left_5">L</span>
+                            </div>
+                            <span class="cuadradoLadoBottom">L</span>
                         </div>
-                    </fieldset>
-                    <button class="btn">Calcular</button>
-                </form>
+                        <div class="formulas_contenedor">
+                            <div class="formula">
+                                <span class="formulas_nombre">Perimetro:</span>
+                                <span class="formulas">L + L + L + L</span>
+                            </div>
+                            <div class="formula">
+                                <span class="formulas_nombre">Area:</span>
+                                <span class="formulas">L x L</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor_switch">
+                        <button id="switch_triangulo" class="switch switch_perimetro">
+                            <span>Perimetro</span>
+                            <span>Area</span>
+                        </button>
+                    </div>
 
 
-            </div>
-        </section>
-        <!--#cuadrado-->
+                </div>
+
+                <div class="formulario_triangulo formulario contenedor">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="area_triangulo ocultar" action="">
+                        <fieldset>
+                            <legend>Area del triangulo</legend>
+                            <div class="input">
+                                <label for="areaAlturaTriangulo">Altura:</label>
+                                <input type="number" id="areaAlturaTriangulo">
+                            </div>
+                            <div class="input">
+                                <label for="areaBaseTriangulo">Base:</label>
+                                <input type="number" id="areaBaseTriangulo">
+                            </div>
+
+                        </fieldset>
+                        <button type="button" data-boton="calcular" data-tipo="area" data-figura="triangulo" class="btn">Calcular</button>
+                    </form>
+
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="perimetro_triangulo" action="">
+                        <fieldset>
+                            <legend>Perimetro del triangulo</legend>
+                            <div class="input">
+                                <label for="perimetroLado1Triangulo">Lado 1:</label>
+                                <input type="number" id="perimetroLado1Triangulo">
+                            </div>
+                            <div class="input">
+                                <label for="perimetroLado2Triangulo">Lado 2:</label>
+                                <input type="number" id="perimetroLado2Triangulo">
+                            </div>
+                            <div class="input">
+                                <label for="perimetroBaseTriangulo">Base:</label>
+                                <input type="number" id="perimetroBaseTriangulo">
+                            </div>
+                        </fieldset>
+                        <button type="button" data-boton="calcular" data-tipo="perimetro" data-figura="triangulo" class="btn">Calcular</button>
+                    </form>
+
+
+                </div>
+
+            </section>
+            <!--#triangulo-->
+
+            <section id="circulo">
+                <div class="display_contenedor contenedor">
+                    <div class="display">
+                        <div class="figura">
+                            <span class="cuadradoLadoTop">L</span>
+                            <div class="cuadrado_contenedor">
+                                <span class="cuadradoLadoLeft">L</span>
+                                <div class="cuadrado mar_left_5"></div>
+                                <span class="cuadradoLadoRight mar_left_5">L</span>
+                            </div>
+                            <span class="cuadradoLadoBottom">L</span>
+                        </div>
+                        <div class="formulas_contenedor">
+                            <div class="formula">
+                                <span class="formulas_nombre">Perimetro:</span>
+                                <span class="formulas">L + L + L + L</span>
+                            </div>
+                            <div class="formula">
+                                <span class="formulas_nombre">Area:</span>
+                                <span class="formulas">L x L</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor_switch">
+                        <button id="switch_circulo" class="switch switch_perimetro">
+                            <span>Perimetro</span>
+                            <span>Area</span>
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <div class="formulario_circulo formulario contenedor">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="area_circulo ocultar" action="">
+                        <fieldset>
+                            <legend>Area del circulo</legend>
+                            <div class="input">
+                                <label for="areaRadioCirculo">Radio:</label>
+                                <input type="number" id="areaRadioCirculo">
+                            </div>
+                        </fieldset>
+                        <button type="button" data-boton="calcular" data-tipo="area" data-figura="circulo" class="btn">Calcular</button>
+                    </form>
+
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="perimetro_circulo" action="">
+                        <fieldset>
+                            <legend>Circunferencia del circulo</legend>
+                            <div class="input">
+                                <label for="perimetroRadioCirculo">Radio:</label>
+                                <input type="number" id="perimetroRadioCirculo">
+                            </div>
+                        </fieldset>
+                        <button type="button" data-boton="calcular" data-tipo="perimetro" data-figura="circulo" class="btn">Calcular</button>
+                    </form>
+
+
+                </div>
+
+            </section>
+            <!--#circulo-->
+        </div>
+
+
+        <span id="resultado" class="titulo_resultado">Resultado:</span>
+        <span class="resultado">-----</span>
+
     </main>
     <script src="js/app.js"></script>
 </body>

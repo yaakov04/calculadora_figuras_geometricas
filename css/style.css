@@ -20,11 +20,11 @@ body {
     background-color: #ffffff;
     color: #514F59;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin: 0;
 }
 
@@ -34,6 +34,16 @@ header {
     color: white;
     position: relative;
     z-index: 1;
+}
+
+button {
+    border: none;
+    padding: 1rem;
+    color: white;
+}
+
+section {
+    display: none;
 }
 
 .contenedor {
@@ -48,6 +58,10 @@ header {
 .header {
     display: flex;
     justify-content: space-between;
+}
+
+.icono_menu_movil {
+    background: none;
 }
 
 .icono_menu_movil i {
@@ -138,6 +152,44 @@ header {
     height: 10rem;
 }
 
+.contenedor_switch {
+    display: flex;
+    justify-content: center;
+}
+
+.switch {
+    background-color: #6D72C3;
+    border-radius: 2rem;
+    width: 15rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8.5rem;
+    height: 4.5rem;
+    background-color: #514F59;
+    border-radius: 2rem;
+    transition: right .3s ease;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+    top: -.3rem;
+    right: -2rem;
+}
+
+.switch_perimetro::after {
+    right: 6.5rem;
+}
+
+.titulo_resultado {
+    display: block;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
 .resultado {
     display: block;
     width: 100%;
@@ -145,7 +197,7 @@ header {
     border-left: none;
     border-right: none;
     padding: .5rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 700;
 }
@@ -158,6 +210,10 @@ header {
 form {
     display: flex;
     flex-direction: column;
+}
+
+.ocultar {
+    display: none;
 }
 
 fieldset {
@@ -185,10 +241,12 @@ input {
     text-align: center;
 }
 
-button {
-    border: none;
-    padding: .7rem;
+.btn {
     border-radius: .5rem;
     background-color: #5941A9;
-    color: white;
+    font-weight: 700;
+}
+
+.mostrar {
+    display: block;
 }
