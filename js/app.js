@@ -24,7 +24,6 @@ const btnMenuMovil = document.querySelector('.icono_menu_movil');
 const openMenuMovil = () => menuMovil.classList.toggle('menu_movil_open');
 const ocultarMenu = (e) => {
     if (e.target.getAttribute('data-icono-menu') == 'true' || e.target.className == 'fas fa-bars') {
-        //no hagas nada
         return;
     } else {
         menuMovil.classList.remove('menu_movil_open')
@@ -32,6 +31,17 @@ const ocultarMenu = (e) => {
 };
 btnMenuMovil.addEventListener('click', openMenuMovil);
 document.body.addEventListener('click', ocultarMenu);
+
+//reset input y output
+const resultado = document.querySelector('.resultado');
+const inputs = document.querySelectorAll('input');
+const reset = () => {
+    resultado.innerHTML = '-----';
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = '';
+    }
+};
+reset();
 //Mostrar-ocultar seccion
 const menu = menuMovil.children[0];
 const ocultar = (contenedorSeccion) => {
@@ -46,19 +56,10 @@ const mostrarSeccion = (e) => {
         const contenedorSeccion = seccion.parentElement.children;
         ocultar(contenedorSeccion);
         seccion.classList.add('mostrar');
+        reset();
     }
 };
 menu.addEventListener('click', mostrarSeccion);
-//reset input y output
-const resultado = document.querySelector('.resultado');
-const inputs = document.querySelectorAll('input');
-const reset = () => {
-    resultado.innerHTML = '-----';
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].value = '';
-    }
-};
-reset();
 //switch area-perimetro
 const cambiarSwitch = (btnSwitch, contenedorForm) => {
     btnSwitch.classList.toggle('switch_perimetro');
