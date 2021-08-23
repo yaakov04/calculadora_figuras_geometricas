@@ -33,7 +33,7 @@ header {
     padding: 1rem;
     color: white;
     position: relative;
-    z-index: 1;
+    z-index: 5;
 }
 
 button {
@@ -71,7 +71,7 @@ section {
 .menu_movil_contenedor {
     width: 100%;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     transform: translateY(-11rem);
     transition: transform .3s ease-in-out;
 }
@@ -114,9 +114,12 @@ section {
     font-weight: 700;
 }
 
-.cuadrado_contenedor {
+.cuadrado_contenedor,
+.circulo_contenedor,
+.triangulo_contenedor {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .formulas_contenedor {
@@ -157,6 +160,57 @@ section {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
+    position: relative;
+}
+
+.circulo::before {
+    content: "";
+    position: absolute;
+    background-color: #514F59;
+    width: 50%;
+    height: .1rem;
+    top: 5rem;
+}
+
+.circuloRadio {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+}
+
+.triangulo {
+    width: 0;
+    height: 0;
+    position: relative;
+    border-left: 5rem solid transparent;
+    border-right: 5rem solid transparent;
+    border-bottom: 7rem solid #514F59;
+}
+
+.triangulo::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 4.8rem solid transparent;
+    border-right: 4.8rem solid transparent;
+    border-bottom: 6.6rem solid #ffffff;
+    left: -4.8rem;
+    top: .3rem;
+}
+
+.lineTriangulo {
+    width: .1rem;
+    height: 6.8rem;
+    top: .2rem;
+    background-color: #514F59;
+    position: absolute;
+}
+
+.alturaTriangulo {
+    position: absolute;
+    top: 2.7rem;
+    left: -1.5rem;
 }
 
 .contenedor_switch {

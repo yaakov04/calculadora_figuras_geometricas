@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Calculadora de figuras geometricas</title>
     <script src="https://kit.fontawesome.com/471047becf.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="formulario_cuadrado formulario contenedor">
-                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="area_cuadrado ocultar" action="">
+                    <form onkeydown="presionarEnter(this);return event.key !=' Enter ';" class="area_cuadrado ocultar" action="">
                         <fieldset>
                             <legend>Area del cuadrado</legend>
                             <div class="input">
@@ -82,7 +82,7 @@
                         <button type="button" data-boton="calcular" data-tipo="area" data-figura="cuadrado" class="btn">Calcular</button>
                     </form>
 
-                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="perimetro_cuadrado">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter ';" class="perimetro_cuadrado">
                         <fieldset>
                             <legend>Perimetro del cuadrado</legend>
                             <div class="input">
@@ -103,13 +103,15 @@
                 <div class="display_contenedor contenedor">
                     <div class="display">
                         <div class="figura">
-                            <span class="cuadradoLadoTop">L</span>
-                            <div class="cuadrado_contenedor">
-                                <span class="cuadradoLadoLeft">L</span>
-                                <div class="cuadrado mar_left_5"></div>
-                                <span class="cuadradoLadoRight mar_left_5">L</span>
+                            <div class="triangulo_contenedor">
+                                <span class="lado1Triangulo">L1</span>
+                                <div class="triangulo mar_left_5">
+                                    <span class="lineTriangulo"></span>
+                                    <span class="alturaTriangulo">A</span>
+                                </div>
+                                <span class="lado2Triangulo mar_left_5">L2</span>
                             </div>
-                            <span class="cuadradoLadoBottom">L</span>
+                            <span class="baseTriangulo">B</span>
                         </div>
                         <div class="formulas_contenedor">
                             <div class="formula">
@@ -133,7 +135,7 @@
                 </div>
 
                 <div class="formulario_triangulo formulario contenedor">
-                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="area_triangulo ocultar" action="">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter ';" class="area_triangulo ocultar" action="">
                         <fieldset>
                             <legend>Area del triangulo</legend>
                             <div class="input">
@@ -149,7 +151,7 @@
                         <button type="button" data-boton="calcular" data-tipo="area" data-figura="triangulo" class="btn">Calcular</button>
                     </form>
 
-                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="perimetro_triangulo" action="">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter ';" class="perimetro_triangulo" action="">
                         <fieldset>
                             <legend>Perimetro del triangulo</legend>
                             <div class="input">
@@ -178,13 +180,12 @@
                 <div class="display_contenedor contenedor">
                     <div class="display">
                         <div class="figura">
-                            <span class="cuadradoLadoTop">L</span>
-                            <div class="cuadrado_contenedor">
-                                <span class="cuadradoLadoLeft">L</span>
-                                <div class="circulo mar_left_5"></div>
-                                <span class="cuadradoLadoRight mar_left_5">L</span>
+                            <div class="circulo_contenedor">
+                                <div class="circulo mar_left_5">
+                                    <span class="circuloRadio">R</span>
+
+                                </div>
                             </div>
-                            <span class="cuadradoLadoBottom">L</span>
                         </div>
                         <div class="formulas_contenedor">
                             <div class="formula">
@@ -208,7 +209,7 @@
                 </div>
 
                 <div class="formulario_circulo formulario contenedor">
-                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="area_circulo ocultar" action="">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter ';" class="area_circulo ocultar" action="">
                         <fieldset>
                             <legend>Area del circulo</legend>
                             <div class="input">
@@ -219,7 +220,7 @@
                         <button type="button" data-boton="calcular" data-tipo="area" data-figura="circulo" class="btn">Calcular</button>
                     </form>
 
-                    <form onkeydown="presionarEnter(this);return event.key !='Enter';" class="perimetro_circulo" action="">
+                    <form onkeydown="presionarEnter(this);return event.key !='Enter ';" class="perimetro_circulo" action="">
                         <fieldset>
                             <legend>Circunferencia del circulo</legend>
                             <div class="input">
